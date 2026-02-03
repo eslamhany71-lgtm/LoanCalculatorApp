@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
-
   const updateBtn = document.getElementById("swUpdateBtn");
-  const APP_VERSION = "1.1.0";
+  updateBtn.classList.remove("hidden"); // Force show
+});
 
   // Check saved version
   const savedVersion = localStorage.getItem("app_version");
