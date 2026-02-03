@@ -1,24 +1,4 @@
-window.addEventListener("DOMContentLoaded", () => {
-  const updateBtn = document.getElementById("swUpdateBtn");
-  updateBtn.classList.remove("hidden"); // Force show
-});
-
-  // Check saved version
-  const savedVersion = localStorage.getItem("app_version");
-  if (savedVersion && savedVersion !== APP_VERSION) {
-    showUpdateNotification();
-  }
-  localStorage.setItem("app_version", APP_VERSION);
-
-  function showUpdateNotification() {
-    updateBtn.classList.remove("hidden");
-    // Auto refresh after 5 seconds
-    setTimeout(() => {
-      location.reload();
-    }, 5000);
-  }
-
-  // حسابات القرض Buttons
+ // حسابات القرض Buttons
   const calcBtn = document.getElementById("calculateBtn");
   const resetBtn = document.getElementById("resetBtn");
 
