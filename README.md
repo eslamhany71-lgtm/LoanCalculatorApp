@@ -22,6 +22,18 @@
 
     <label for="months">Months:</label>
     <input type="number" id="months" placeholder="Enter months">
+    <div class="content">
+  
+  <div class="inputs">
+    <!-- الإدخالات اللي عندك زي ما هي -->
+  </div>
+
+  <div class="results" id="result">
+    <!-- النتائج هتظهر هنا -->
+  </div>
+
+</div>
+
 
     <button id="calculateBtn">Calculate</button>
     <button id="resetBtn" class="reset">Reset</button>
