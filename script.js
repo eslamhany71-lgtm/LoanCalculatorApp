@@ -1,11 +1,12 @@
- // حسابات القرض Buttons
+window.addEventListener("DOMContentLoaded", () => {
+
   const calcBtn = document.getElementById("calculateBtn");
   const resetBtn = document.getElementById("resetBtn");
 
   calcBtn.addEventListener("click", calculateLoan);
   resetBtn.addEventListener("click", resetForm);
-});
 
+});
 
 function calculateLoan() {
   const loanAmount = parseFloat(document.getElementById("loanAmount").value);
@@ -28,11 +29,12 @@ function calculateLoan() {
     return;
   }
 
-  // calculations
+  // حساب الفايدة والمبلغ الكلي
   const totalInterest = loanAmount * interestRate * (months / 12);
   const totalPayment = loanAmount + totalInterest;
   const monthly = totalPayment / months;
 
+  // الرسوم 5%
   const adminFees = loanAmount * 0.05;
   const totalFeesAndFirst = adminFees + monthly;
   const totalInterestAndFees = totalInterest + adminFees;
