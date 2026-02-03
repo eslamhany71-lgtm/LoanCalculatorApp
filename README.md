@@ -1,18 +1,19 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Loan Calculator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
+
   <div class="container">
     <h2>Loan Calculator</h2>
 
     <div class="content">
 
-      <!-- inputs -->
+      <!-- الشمال: الإدخالات -->
       <div class="inputs">
 
         <label>Choose Product</label>
@@ -39,13 +40,11 @@
 
         <button id="calculateBtn">Calculate</button>
         <button id="resetBtn">Reset</button>
-    
+
       </div>
 
-      <!-- results -->
-      <div class="results" id="result">
-        <!-- JS results -->
-      </div>
+      <!-- اليمين: النتائج -->
+      <div class="results" id="result"></div>
 
     </div>
   </div>
