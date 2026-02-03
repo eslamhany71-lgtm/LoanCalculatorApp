@@ -1,4 +1,5 @@
 document.getElementById("calculateBtn").addEventListener("click", calculateLoan);
+document.getElementById("resetBtn").addEventListener("click", resetForm);
 
 function calculateLoan() {
   const loanAmount = parseFloat(document.getElementById("loanAmount").value);
@@ -34,7 +35,9 @@ function calculateLoan() {
     <p>Total Payment: <strong>${totalPayment.toFixed(2)}</strong></p>
     <p>Total Interest: <strong>${totalInterest.toFixed(2)}</strong></p>
     <p>Interest Rate Used: <strong>${(interestRate * 100).toFixed(2)}%</strong></p>
-    
+  `;
+}
+
 // دالة لمسح الحقول
 function resetForm() {
   document.getElementById("loanAmount").value = "";
