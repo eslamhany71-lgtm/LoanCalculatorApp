@@ -5,18 +5,18 @@ function calculateLoan() {
 
   const resultDiv = document.getElementById("result");
 
-  if (!loanAmount || !interestRate || !months || loanAmount <=0 || interestRate <0 || months <=0) {
+  if (!loanAmount || !interestRate || !months || loanAmount <= 0 || interestRate < 0 || months <= 0) {
     resultDiv.innerHTML = "<span style='color:red'>Please enter valid positive numbers!</span>";
     return;
   }
 
-  const monthlyRate = interestRate / 12 / 100;
-  const emi = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
-  const totalPayment = emi * months;
-  const totalInterest = totalPayment - loanAmount;
+  // حساب الفائدة البسيطة
+  const totalInterest = loanAmount * (interestRate / 100) * (months / 12);
+  const totalPayment = loanAmount + totalInterest;
+  const monthlyPayment = totalPayment / months;
 
   resultDiv.innerHTML = `
-    <p>Monthly Payment (EMI): <strong>${emi.toFixed(2)}</strong></p>
+    <p>Monthly Payment: <strong>${monthlyPayment.toFixed(2)}</strong></p>
     <p>Total Payment: <strong>${totalPayment.toFixed(2)}</strong></p>
     <p>Total Interest: <strong>${totalInterest.toFixed(2)}</strong></p>
   `;
