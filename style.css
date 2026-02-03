@@ -67,16 +67,4 @@ button.reset {
 button.reset:hover {
   background-color: #5a6268;
 }
-button.update {
-  background: #dc3545;
-  color: white;
-  padding: 12px;
-  width: 100%;
-  margin-top: 10px;
-  border-radius: 8px;
-  font-weight: bold;
-}
 
-.hidden {
-  display: none;
-}
