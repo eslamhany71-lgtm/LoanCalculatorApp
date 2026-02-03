@@ -1,3 +1,23 @@
+const APP_VERSION = "1.1.0"; // غيّرها كل مرة تعدّل أي حاجة
+const updateBtn = document.getElementById("swUpdateBtn");
+
+// تحقق من النسخة في localStorage
+const savedVersion = localStorage.getItem("app_version");
+if (savedVersion && savedVersion !== APP_VERSION) {
+  showUpdateNotification();
+}
+localStorage.setItem("app_version", APP_VERSION);
+
+// الفنكشن اللي تظهر الزرار
+function showUpdateNotification() {
+  updateBtn.classList.remove("hidden");
+  
+  // لو عايز، نعمل تحديث تلقائي بعد ثواني
+  setTimeout(() => {
+    location.reload();
+  }, 5000); // 5 ثواني تلقائي
+}
+
 window.addEventListener("DOMContentLoaded", () => {
 
   const calcBtn = document.getElementById("calculateBtn");
