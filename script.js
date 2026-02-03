@@ -36,3 +36,10 @@ function calculateLoan() {
     <p>Interest Rate Used: <strong>${(interestRate * 100).toFixed(2)}%</strong></p>
   `;
 }
+// دالة لمسح الحقول
+function resetForm() {
+  document.getElementById("loanAmount").value = "";
+  document.getElementById("months").value = "";
+  document.getElementById("product").selectedIndex = 0;
+  document.getElementById("result").innerHTML = "";
+}
