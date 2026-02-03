@@ -4,13 +4,12 @@
   <title>Loan Calculator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <button id="swUpdateBtn" class="update small hidden">
-  🔔 New Update Available
-</button>
 
 </head>
 <body>
-
+ <button id="swUpdateBtn" class="update small hidden">
+  🔔 New Update Available
+</button>
   <div class="container">
     <h2>Loan Calculator</h2>
 
