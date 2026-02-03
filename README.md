@@ -1,4 +1,3 @@
-1
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -26,9 +25,6 @@
 
     <button id="calculateBtn">Calculate</button>
     <button id="resetBtn" class="reset">Reset</button>
-<button id="swUpdateBtn" class="update hidden">
-  🔔 New Update Available – Click to Update
-</button>
 
     <div id="result"></div>
   </div>
