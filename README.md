@@ -7,9 +7,6 @@
 
 </head>
 <body>
- <button id="swUpdateBtn" class="update small hidden">
-  🔔 New Update Available
-</button>
   <div class="container">
     <h2>Loan Calculator</h2>
 
@@ -42,7 +39,9 @@
 
         <button id="calculateBtn">Calculate</button>
         <button id="resetBtn">Reset</button>
-        
+         <button id="swUpdateBtn" class="update small hidden">
+  🔔 New Update Available
+</button>
       </div>
 
       <!-- results -->
