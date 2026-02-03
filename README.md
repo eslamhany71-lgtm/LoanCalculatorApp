@@ -31,3 +31,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+<button id="calculateBtn">Calculate</button>
+<button id="resetBtn" class="reset">Reset</button>
