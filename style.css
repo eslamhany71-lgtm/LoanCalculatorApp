@@ -59,3 +59,11 @@ button:hover {
   background-color: #eef;
   border-radius: 5px;
 }
+button.reset {
+  background-color: #6c757d;
+  margin-top: 10px;
+}
+
+button.reset:hover {
+  background-color: #5a6268;
+}
