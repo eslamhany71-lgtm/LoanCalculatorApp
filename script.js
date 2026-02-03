@@ -48,3 +48,19 @@ function resetForm() {
   document.getElementById("product").selectedIndex = 0;
   document.getElementById("result").innerHTML = "";
 }
+navigator.serviceWorker.addEventListener("controllerchange", () => {
+  window.location.reload();
+});
+
+function showSWUpdate() {
+  const btn = document.getElementById("swUpdateBtn");
+  btn.classList.remove("hidden");
+
+  btn.onclick = () => {
+    navigator.serviceWorker.getRegistration().then(reg => {
+      if (reg.waiting) {
+        reg.waiting.postMessage("SKIP_WAITING");
+      }
+    });
+  };
+}
