@@ -28,7 +28,6 @@
     <div id="result"></div>
   </div>
 
-  <script src="script.js"></script>
   <button id="resetBtn" class="reset">Reset</button>
 </body>
 </html>
