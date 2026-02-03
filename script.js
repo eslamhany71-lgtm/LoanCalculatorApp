@@ -1,44 +1,83 @@
-document.getElementById("calculateBtn").addEventListener("click", calculateLoan);
-document.getElementById("resetBtn").addEventListener("click", resetForm);
+// Service Worker register
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js");
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+
+  const calcBtn = document.getElementById("calculateBtn");
+  const resetBtn = document.getElementById("resetBtn");
+
+  calcBtn.addEventListener("click", calculateLoan);
+  resetBtn.addEventListener("click", resetForm);
+
+});
 
 function calculateLoan() {
   const loanAmount = parseFloat(document.getElementById("loanAmount").value);
   const months = parseInt(document.getElementById("months").value);
-  const productSelect = document.getElementById("product");
-  const interestRate = parseFloat(productSelect.value);
+  const product = document.getElementById("product");
+  const interestRate = parseFloat(product.value);
 
-  const selectedOption = productSelect.options[productSelect.selectedIndex];
-  const minAmount = parseFloat(selectedOption.getAttribute("data-min"));
-  const maxAmount = parseFloat(selectedOption.getAttribute("data-max"));
+  const min = parseFloat(product.selectedOptions[0].dataset.min);
+  const max = parseFloat(product.selectedOptions[0].dataset.max);
 
-  const resultDiv = document.getElementById("result");
+  const result = document.getElementById("result");
 
-  // التحقق من المدخلات
-  if (!loanAmount || !months || loanAmount <= 0 || months <= 0) {
-    resultDiv.innerHTML = "<span style='color:red'>Please enter valid positive numbers!</span>";
+  if (!loanAmount || !months) {
+    result.innerHTML = "<b>Enter valid values</b>";
     return;
   }
 
-  // التحقق من نطاق المبلغ
-  if (loanAmount < minAmount || loanAmount > maxAmount) {
-    resultDiv.innerHTML = `<span style='color:red'>Amount must be between ${minAmount.toLocaleString()} and ${maxAmount.toLocaleString()} for this product!</span>`;
+  if (loanAmount < min || loanAmount > max) {
+    result.innerHTML = `<b>Amount must be between ${min} and ${max}</b>`;
     return;
   }
 
-  // حساب الفائدة البسيطة
+  // calculations
   const totalInterest = loanAmount * interestRate * (months / 12);
   const totalPayment = loanAmount + totalInterest;
-  const monthlyPayment = totalPayment / months;
+  const monthly = totalPayment / months;
 
-  resultDiv.innerHTML = `
-    <p>Monthly Payment: <strong>${monthlyPayment.toFixed(2)}</strong></p>
-    <p>Total Payment: <strong>${totalPayment.toFixed(2)}</strong></p>
-    <p>Total Interest: <strong>${totalInterest.toFixed(2)}</strong></p>
-    <p>Interest Rate Used: <strong>${(interestRate * 100).toFixed(2)}%</strong></p>
+  const adminFees = loanAmount * 0.05;
+  const totalFeesAndFirst = adminFees + monthly;
+  const totalInterestAndFees = totalInterest + adminFees;
+  const receivedMinusFeesAndFirst = loanAmount - totalFeesAndFirst;
+  const receivedMinusFeesOnly = loanAmount - adminFees;
+
+  result.innerHTML = `
+    <div class="result-card">
+      <h4>Monthly Installment</h4>
+      <p>${monthly.toFixed(2)} EGP</p>
+    </div>
+
+    <div class="result-card">
+      <h4>Administrative Fees (5%)</h4>
+      <p>${adminFees.toFixed(2)} EGP</p>
+    </div>
+
+    <div class="result-card">
+      <h4>Total Fees + First Installment</h4>
+      <p>${totalFeesAndFirst.toFixed(2)} EGP</p>
+    </div>
+
+    <div class="result-card">
+      <h4>Total Interest + Fees</h4>
+      <p>${totalInterestAndFees.toFixed(2)} EGP</p>
+    </div>
+
+    <div class="result-card">
+      <h4>Net Amount (Fees + First)</h4>
+      <p>${receivedMinusFeesAndFirst.toFixed(2)} EGP</p>
+    </div>
+
+    <div class="result-card">
+      <h4>Net Amount (Fees Only)</h4>
+      <p>${receivedMinusFeesOnly.toFixed(2)} EGP</p>
+    </div>
   `;
 }
 
-// دالة لمسح الحقول
 function resetForm() {
   document.getElementById("loanAmount").value = "";
   document.getElementById("months").value = "";
