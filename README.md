@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -24,11 +25,11 @@
     <input type="number" id="months" placeholder="Enter months">
 
     <button id="calculateBtn">Calculate</button>
+    <button id="resetBtn" class="reset">Reset</button>
 
     <div id="result"></div>
   </div>
 
-  <button id="resetBtn" class="reset">Reset</button>
+  <script src="script.js"></script>
 </body>
 </html>
-
