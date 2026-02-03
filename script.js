@@ -35,7 +35,6 @@ function calculateLoan() {
     <p>Total Interest: <strong>${totalInterest.toFixed(2)}</strong></p>
     <p>Interest Rate Used: <strong>${(interestRate * 100).toFixed(2)}%</strong></p>
   `;
-}
 // دالة لمسح الحقول
 function resetForm() {
   document.getElementById("loanAmount").value = "";
