@@ -188,3 +188,8 @@ h2 {
   color: #fff;
   cursor: pointer;
 }
+.inputs input:focus,
+.inputs select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0,123,255,0.4);
+}
