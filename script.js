@@ -18,7 +18,7 @@ function calculateLoan() {
   const max = parseFloat(product.selectedOptions[0].dataset.max);
 
   const result = document.getElementById("result");
-}
+
   if (!loanAmount || !months) {
     result.innerHTML = "<b>Enter valid values</b>";
     return;
