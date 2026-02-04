@@ -89,7 +89,7 @@ result.innerHTML = `
       <p>${receivedMinusFeesOnly.toFixed(2)} EGP</p>
     </div>
   </div>
-`;
+
 
 
 function resetForm() {
