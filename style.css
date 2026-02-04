@@ -197,3 +197,68 @@ h2 {
   color: #aaa;
   font-size: 14px;
 }
+/* ===== WOW BUTTON ===== */
+.wow-btn {
+  width: 100%;
+  max-width: 360px;
+  padding: 16px 22px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, #007bff, #00d4ff);
+  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.35);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* تأثير الحركة */
+.wow-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0, 123, 255, 0.45);
+}
+
+/* لمسة لمعان */
+.wow-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+  transition: 0.6s;
+}
+
+.wow-btn:hover::after {
+  left: 120%;
+}
+
+/* زرار الرجوع */
+.wow-btn.outline {
+  background: #fff;
+  color: #007bff;
+  border: 2px solid #007bff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.wow-btn.outline:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+/* موبايل */
+@media (max-width: 480px) {
+  .wow-btn {
+    font-size: 16px;
+    padding: 14px;
+  }
+}
