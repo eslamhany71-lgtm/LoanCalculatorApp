@@ -90,7 +90,7 @@ result.innerHTML = `
     </div>
   </div>
 `;
-
+}
 
 function resetForm() {
   document.getElementById("loanAmount").value = "";
