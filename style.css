@@ -37,12 +37,20 @@ h2 {
 .inputs input,
 .inputs select {
   width: 100%;
-  padding: 12px;
+  height: 48px;              /* يخليهم نفس الطول */
+  padding: 0 14px;
   margin-top: 5px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+  appearance: none;          /* مهم للـ select */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
   transition: all 0.3s ease;
 }
+
 
 .inputs input:focus,
 .inputs select:focus {
