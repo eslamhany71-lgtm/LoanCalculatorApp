@@ -171,3 +171,12 @@ h2 {
   background: #f0f4c3;
   border-left: 6px solid #cddc39;
 }
+.main-btn {
+  padding: 15px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg,#007bff,#00c6ff);
+  color: #fff;
+  cursor: pointer;
+}
