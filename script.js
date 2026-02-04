@@ -41,7 +41,6 @@ function calculateLoan() {
   const receivedMinusFeesAndFirst = loanAmount - totalFeesAndFirst;
   const receivedMinusFeesOnly = loanAmount - adminFees;
 
-  result.innerHTML = `
 result.innerHTML = `
   <div class="result-card monthly">
     <i class="fa-solid fa-calendar-check"></i>
