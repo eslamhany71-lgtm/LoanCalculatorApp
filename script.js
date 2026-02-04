@@ -73,7 +73,6 @@ result.innerHTML = `
       <p>${totalInterestAndFees.toFixed(2)} EGP</p>
     </div>
   </div>
-  `;
 
   <div class="result-card netFirst">
     <i class="fa-solid fa-wallet"></i>
@@ -90,7 +89,7 @@ result.innerHTML = `
       <p>${receivedMinusFeesOnly.toFixed(2)} EGP</p>
     </div>
   </div>
-
+`;
 
 
 function resetForm() {
