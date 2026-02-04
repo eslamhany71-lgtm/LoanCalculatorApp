@@ -1,3 +1,4 @@
+window.anchors = window.anchors || { add: function () {} };
 window.addEventListener("DOMContentLoaded", () => {
 
   const calcBtn = document.getElementById("calculateBtn");
