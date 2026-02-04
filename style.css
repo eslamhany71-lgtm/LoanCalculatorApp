@@ -8,40 +8,50 @@ body {
 .container {
   width: 95%;
   max-width: 1100px;
-  margin: 40px auto;
+  margin: 30px auto;
   background: #ffffff;
-  padding: 30px;
+  padding: 20px;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
+h1 {
+  text-align: center;
+  font-size: 2rem; /* نسبي */
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
 h2 {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   color: #007bff;
+  font-size: 1.5rem;
 }
 
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 35px;
+  gap: 25px;
 }
 
 .inputs label {
   display: block;
-  margin-top: 15px;
+  margin-top: 12px;
   font-weight: 600;
   color: #333;
+  font-size: 1rem;
 }
 
 .inputs input,
 .inputs select {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   margin-top: 5px;
   border-radius: 8px;
   border: 1px solid #ccc;
   transition: all 0.3s ease;
+  font-size: 1rem;
 }
 
 .inputs input:focus,
@@ -53,9 +63,9 @@ h2 {
 
 .inputs button {
   width: 100%;
-  padding: 14px;
+  padding: 12px;
   margin-top: 15px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   border: none;
   border-radius: 10px;
@@ -89,8 +99,11 @@ h2 {
 }
 
 .result-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   background: #f8f9fa;
-  padding: 18px;
+  padding: 15px;
   border-radius: 12px;
   border-left: 6px solid #007bff;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
@@ -104,70 +117,66 @@ h2 {
 
 .result-card h4 {
   margin: 0;
-  font-size: 14px;
+  font-size: 0.9rem;
   color: #555;
 }
 
 .result-card p {
-  margin: 8px 0 0;
-  font-size: 22px;
+  margin: 5px 0 0;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #000;
 }
 
+.result-card i {
+  font-size: 1.5rem;
+}
+
+/* ألوان لكل نتيجة */
+.monthly { background: #e3f2fd; border-left: 6px solid #2196f3; }
+.fees { background: #ffebee; border-left: 6px solid #f44336; }
+.totalFirst { background: #fff3e0; border-left: 6px solid #ff9800; }
+.totalInterest { background: #e8f5e9; border-left: 6px solid #4caf50; }
+.netFirst { background: #f3e5f5; border-left: 6px solid #9c27b0; }
+.netOnly { background: #f0f4c3; border-left: 6px solid #cddc39; }
+
+/* ===== Media Queries للموبايل ===== */
 @media (max-width: 768px) {
   .content {
     grid-template-columns: 1fr;
   }
 }
-/* ===== Result Cards Advanced Styling ===== */
 
-.result-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 18px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+    margin: 20px auto;
+  }
 
-.result-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
+  h1 {
+    font-size: 1.5rem;
+  }
 
-.result-card i {
-  font-size: 26px;
-}
+  h2 {
+    font-size: 1.2rem;
+  }
 
-/* ألوان لكل نتيجة */
-.monthly {
-  background: #e3f2fd;
-  border-left: 6px solid #2196f3;
-}
+  .inputs input,
+  .inputs select,
+  .inputs button {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
 
-.fees {
-  background: #ffebee;
-  border-left: 6px solid #f44336;
-}
+  .result-card h4 {
+    font-size: 0.8rem;
+  }
 
-.totalFirst {
-  background: #fff3e0;
-  border-left: 6px solid #ff9800;
-}
+  .result-card p {
+    font-size: 1rem;
+  }
 
-.totalInterest {
-  background: #e8f5e9;
-  border-left: 6px solid #4caf50;
-}
-
-.netFirst {
-  background: #f3e5f5;
-  border-left: 6px solid #9c27b0;
-}
-
-.netOnly {
-  background: #f0f4c3;
-  border-left: 6px solid #cddc39;
+  .result-card i {
+    font-size: 1.2rem;
+  }
 }
