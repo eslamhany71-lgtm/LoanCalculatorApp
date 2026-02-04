@@ -120,3 +120,54 @@ h2 {
     grid-template-columns: 1fr;
   }
 }
+/* ===== Result Cards Advanced Styling ===== */
+
+.result-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.result-card i {
+  font-size: 26px;
+}
+
+/* ألوان لكل نتيجة */
+.monthly {
+  background: #e3f2fd;
+  border-left: 6px solid #2196f3;
+}
+
+.fees {
+  background: #ffebee;
+  border-left: 6px solid #f44336;
+}
+
+.totalFirst {
+  background: #fff3e0;
+  border-left: 6px solid #ff9800;
+}
+
+.totalInterest {
+  background: #e8f5e9;
+  border-left: 6px solid #4caf50;
+}
+
+.netFirst {
+  background: #f3e5f5;
+  border-left: 6px solid #9c27b0;
+}
+
+.netOnly {
+  background: #f0f4c3;
+  border-left: 6px solid #cddc39;
+}
