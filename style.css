@@ -265,3 +265,10 @@ h2 {
   }
 }
 /* force rebuild */
+.container h1 {
+  font-size: 28px;        /* حجم العنوان */
+  text-align: center;     /* في النص */
+  margin-bottom: 25px;    /* مسافة تحته */
+  color: #007bff;         /* نفس لون المشروع */
+  font-weight: 700;
+}
